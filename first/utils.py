@@ -1,9 +1,17 @@
 import csv
+import os
 import shutil
 import pandas as pd
 from .models import FileModel
 
 def results():
+
+    if os.path.isfile("media/file/order_prices.csv"):
+        os.remove("media/file/order_prices.csv")
+    if os.path.isfile("media/file/product_customers.csv"):
+        os.remove("media/file/product_customers.csv")
+    if os.path.isfile("media/file/customer_ranking.csv"):
+        os.remove("media/file/customer_ranking.csv")
 
     data_p = []
 
@@ -124,14 +132,17 @@ def results():
 
     archivo1 = FileModel(file="file/order_prices.csv", title="Precios por ID del pedido")
     archivo1.save()
-    
+
     archivo2 = FileModel(file="file/product_customers.csv", title="Productos por consumidor")
     archivo2.save()
-    
+
     archivo3 = FileModel(file="file/customer_ranking.csv", title="Ranking de gastos por consumidor")
     archivo3.save()
 
-
+    os.remove("media/file/customer_ranking_p.csv")
+    os.remove("media/file/customers.csv")
+    os.remove("media/file/orders.csv")
+    os.remove("media/file/products.csv")
 
 
 
