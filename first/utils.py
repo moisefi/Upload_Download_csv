@@ -131,7 +131,7 @@ def results():
     archivo3 = FileModel(file="file/customer_ranking.csv", title="Ranking de gastos por consumidor")
     archivo3.save()
 
-    shutil.rmtree("media/file")
+
 
 
 
