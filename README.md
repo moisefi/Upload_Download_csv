@@ -1,5 +1,7 @@
 After downloading the project run the following commands
 
+(Fisrt activate venv and install requirements)
+
 python manage.py makemigrations
 
 python manage.py migrate
